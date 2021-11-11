@@ -15,7 +15,7 @@ app.get('/', (req, res) => {
     Math.random() * (MAX - MIN + 1)
   );
   res.contentType('application/json');
-  const response = { topic: process.env.ID, payload: number };
+  const response = { name: process.env.ID, value: number };
   res.end(JSON.stringify(response));
 });
 
