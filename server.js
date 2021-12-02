@@ -6,7 +6,7 @@ const express = require('express');
 const PORT = process.env.PORT || 8080;
 const MAX = process.env.MAX || 100;
 const MIN = process.env.MIN || 0;
-const ID = prcess.env.ID || 'NoId';
+const ID = process.env.ID || 'NoId';
 
 // App
 const app = express();
