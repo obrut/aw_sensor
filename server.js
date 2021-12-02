@@ -6,15 +6,17 @@ const express = require('express');
 const PORT = process.env.PORT || 8080;
 const MAX = process.env.MAX || 100;
 const MIN = process.env.MIN || 0;
-const ID = process.env.ID || 'NoId';
+const name = process.env.ID || 'NoId';
 const HOST = process.env.HOST || '0.0.0.0';
 
 // App
 const app = express();
-const random = (min, max) => Math.floor(Math.random() * (max - min)) + min;
+const random = (min, max) => Math.floor(Math.random() * (max - min) + 1);
 app.get('/', (req, res) => {
   res.contentType('application/json');
-  const response = { name: ID, value: random(MIN, MAX) };
+  const value = random(MIN, MAX);
+  console.log(MIN, MAX, value);
+  const response = { name, value };
   res.end(JSON.stringify(response));
 });
 
