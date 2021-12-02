@@ -11,7 +11,7 @@ const HOST = process.env.HOST || '0.0.0.0';
 
 // App
 const app = express();
-const random = (min, max) => Math.floor(Math.random() * (max - min)) + min;
+const random = (min, max) => Math.floor(Math.random() * (max - min)+min);
 app.get('/', (req, res) => {
   res.contentType('application/json');
   const value = random(MIN, MAX);
