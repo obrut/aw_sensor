@@ -10,12 +10,10 @@ const ID = prcess.env.ID || 'NoId';
 
 // App
 const app = express();
+const random = (min, max) => Math.floor(Math.random() * (max - min)) + min;
 app.get('/', (req, res) => {
-  const number = Math.floor(
-    Math.random() * (MAX - MIN + 1)
-  );
   res.contentType('application/json');
-  const response = { name: ID, value: number };
+  const response = { name: ID, value: random(MIN, MAX) };
   res.end(JSON.stringify(response));
 });
 
