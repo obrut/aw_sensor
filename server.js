@@ -14,9 +14,7 @@ const app = express();
 const random = (min, max) => Math.floor(Math.random() * (max - min)) + min;
 app.get('/', (req, res) => {
   res.contentType('application/json');
-  const result = random(MIN, MAX);
-  console.log(MIN, MAX, result);
-  const response = { name: ID, value: result };
+  const response = { name: ID, value: random(MIN, MAX) };
   res.end(JSON.stringify(response));
 });
 
